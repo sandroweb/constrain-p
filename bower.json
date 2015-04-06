@@ -1,0 +1,17 @@
+{
+  "name": "constrain-p",
+  "version": "1.0.0",
+  "homepage": "https://github.com/sandroweb/constrain-p",
+  "description": "jQuery Plugin to auto resize elements with constrain proportions enabled.",
+  "main": "source/constrain-p.js",
+  "keywords": [
+    "constrain",
+    "proportion",
+    "js",
+    "elements"
+  ],
+  "authors": [
+    "Sandro Santos"
+  ],
+  "license": "MIT"
+}
