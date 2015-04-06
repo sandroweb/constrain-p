@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        html, body, ul, li {
+            padding: 0;
+            margin: 0;
+            list-style-type: none;
+            font-family: 'Trebuchet MS';
+        }
+        li {
+            position: relative;
+            display: block;
+            margin: 30px;
+            background-color: #000;
+            overflow: hidden;
+        }
+        li label {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: #000;
+            color: #FFF;
+            font-size: 16px;
+            line-height: 20px;
+            padding: 10px;
+        }
+    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <ul>
+        <li><img class="item item-1" src="img/img-1.jpg" data-original-size="1224x816" data-guide="width"></li>
+        <li><img class="item item-2" src="img/img-2.jpg" data-original-size="477x317" data-guide="width"></li>
+        <li><img class="item item-3" src="img/img-3.jpg" data-original-size="2592x1944" data-guide="width"></li>
+        <li><img class="item item-4" src="img/img-4.jpg" data-original-size="540x240" data-guide="width"></li>
+    </ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script src="https://raw.githubusercontent.com/sandroweb/player-tube/master/dist/player-tube.min.js"></script>
+    <script src="../dist/constrain-p.min.js"></script>
+    <script type="text/javascript">
+    $('.item').constrainP({
+        onResized: function (scope, options) {
+            var info = 'New size: ' + scope.width() + ' x ' + scope.height() + '<br>Scale: ' + options.scale;
+            if (scope.parent().find('label').length === 0) {
+                scope.parent().append('<label>' + info + '</label>');
+            } else {
+                scope.parent().find('label').html(info);
+            }
+        }
+    });
+    </script>
+</body>
+</html>
